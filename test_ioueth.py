@@ -60,6 +60,9 @@ def test_logs(w3, contract, get_logs):
 	tx = contract.iou(k0, transact={'from': k1})
 	evt = get_logs(tx, contract, 'Iou')[0]
 
+	# Output event details to logger
+	log(format(evt))
+
 	assert evt['event'] == 'Iou'
 	assert evt['args']['_from'] == k1
 	assert evt['args']['_to'] == k0
