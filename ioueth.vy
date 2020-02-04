@@ -1,3 +1,6 @@
+# Event
+Iou: event({_from: address, _to: address})
+
 # IOU balance between two accounts.
 ious: map(address, map(address, int128))
 
@@ -10,6 +13,9 @@ def iou(_to: address):
 		self.ious[msg.sender][_to] += 1
 	else:
 		self.ious[_to][msg.sender] -= 1
+
+	# Log event.
+	log.Iou(msg.sender, _to)
 
 @public
 def iou_balance(_a: address, _b: address) -> int128:
