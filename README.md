@@ -5,7 +5,7 @@ An IOU Smart Contract for Ethereum (Vyper)
 See stateless version at https://github.com/iRyanBell/ioueth_lite
 
 **Contract Address:**
-0xba556f09a49764a757c42f384116de7125900d70
+0x3e48cf8d1cd5fbaf2b99a05182ce84c773c938c9
 
 ### ABI:
 
@@ -45,9 +45,13 @@ See stateless version at https://github.com/iRyanBell/ioueth_lite
 ```
 
 **View on Etherscan:**
-https://etherscan.io/address/0xba556f09a49764a757c42f384116de7125900d70
+https://etherscan.io/address/0x3e48cf8d1cd5fbaf2b99a05182ce84c773c938c9
 
 ### Functions
 
 - iou(recipient): Sends an IOU to an Ethereum address.
 - iou_balance(sender, recipient): Returns +/- IOU balance between sender -> recipient.
+
+## Events
+
+- Iou(sender, recipient): Broadcasts the transmission of an IOU from sender -> recipient.
