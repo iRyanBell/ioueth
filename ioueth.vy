@@ -6,9 +6,10 @@ ious: map(address, map(address, int128))
 
 @public
 def iou(_to: address):
-	# Adds 1 IOU, sorted by address.
+	# Avoid self-referential calls.
 	assert _to != msg.sender
 
+	# Adds 1 IOU, sorted by address.
 	if convert(msg.sender, uint256) < convert(_to, uint256):
 		self.ious[msg.sender][_to] += 1
 	else:
