@@ -27,7 +27,7 @@ def test_iou(w3, contract):
 	assert contract.iou_balance(k0, k1) == 1
 	assert contract.iou_balance(k1, k0) == -1
 
-	# Send 1/1 IOU from k1 -> k2
+	# Send IOU from k1 -> k2
 	contract.iou(k2, transact={'from': k1})
 	assert contract.iou_balance(k1, k2) == 1
 	assert contract.iou_balance(k2, k1) == -1
@@ -47,7 +47,7 @@ def test_iou(w3, contract):
 	assert contract.iou_balance(k0, k1) == 0
 	assert contract.iou_balance(k1, k0) == 0
 
-	# Reverse 1/1 IOU from k2 -> k1
+	# Reverse IOU from k2 -> k1
 	contract.iou(k1, transact={'from': k2})
 	assert contract.iou_balance(k1, k2) == 0
 	assert contract.iou_balance(k2, k1) == 0
